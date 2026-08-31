@@ -1,13 +1,10 @@
 from fastapi import APIRouter, HTTPException
 from sqlalchemy.exc import IntegrityError
-
 from app.database import engine
 from app.models.user import User
 from app.security.password import hash_password
 
-
 router = APIRouter()
-
 
 class RegisterRequest(BaseModel):
     username: str
